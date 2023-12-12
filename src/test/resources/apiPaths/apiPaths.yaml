@@ -1,0 +1,28 @@
+# apiPaths.yaml
+baseUrls:
+  development: "https://dev.example.com"
+  staging: "https://staging.example.com"
+  production: "https://prod.example.com"
+  testUrl: "https://reqres.in/api"
+
+users:
+  usersPath: "/users"
+  singleUserPath: "/users/2"
+  createUser: "/api/users"
+  updateUser: "/api/users/{userId}"
+  deleteUser: "/api/users/{userId}"
+
+products:
+  listProducts: "/api/products"
+  singleProduct: "/api/products/{productId}"
+
+auth:
+  loginPath: "/login"
+  register: "/api/register"
+
+posts:
+  listPosts: "/api/posts"
+  singlePost: "/api/posts/{postId}"
+  createPost: "/api/posts"
+  updatePost: "/api/posts/{postId}"
+  deletePost: "/api/posts/{postId}"
