@@ -26,7 +26,9 @@ Getting Started
 
 Cloning the Repository:
 Clone the repository from GitHub with:
+
 git clone https://github.com/roshangit23/ReadyTestAPI.git
+
 This downloads the framework to your local machine.
 
 Running a Test Suite:
@@ -46,4 +48,5 @@ Writing and Managing Tests:
 3)Step Definitions: Utilize existing step definitions in ApiStepDefinitions.java for various API interactions. For new scenarios, extend the framework by adding new generic step definitions.
 
 Conclusion
+
 This framework provides a streamlined, codeless approach to API testing, ideal for teams seeking to implement automated testing with minimal programming effort. It ensures maintainability, scalability, and ease of use, catering to both technical and non-technical users.
