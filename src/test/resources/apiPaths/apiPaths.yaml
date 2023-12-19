@@ -19,6 +19,8 @@ products:
 auth:
   loginPath: "/login"
   register: "/api/register"
+  email: "eve.holt@reqres.in"
+  "password": "cityslicka"
 
 posts:
   listPosts: "/api/posts"

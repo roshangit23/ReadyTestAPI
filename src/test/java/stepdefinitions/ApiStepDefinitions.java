@@ -1,6 +1,10 @@
 package stepdefinitions;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import common.Common;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,42 +12,22 @@ import io.cucumber.java.en.When;
 import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.yaml.snakeyaml.Yaml;
 import utils.ApiTestHelper;
 
 import java.io.File;
-import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-import static common.Common.*;
-import static utils.ApiTestHelper.*;
+import static utils.ApiTestHelper.isJson;
 
-public class ApiStepDefinitions {
+public class ApiStepDefinitions extends Common {
 
     private ApiTestHelper apiHelper = CucumberHooks.getApiHelper();
     private Response response;
     private String extractedValue;
     public ApiStepDefinitions() {
 
-    }
-    private String getApiPathFromYaml(String pathName) {
-        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("apiPaths/apiPaths.yaml")) {
-            Yaml yaml = new Yaml();
-            Map<String, Map<String, String>> data = yaml.load(inputStream);
-
-            for (Map.Entry<String, Map<String, String>> page : data.entrySet()) {
-                Map<String, String> elements = page.getValue();
-                if (elements.containsKey(pathName)) {
-                    return elements.get(pathName);
-                }
-            }
-            throw new IllegalArgumentException("path '" + pathName + "' not found in the YAML file.");
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to load or parse the apiPaths.yaml file.", e);
-        }
     }
     @Given("I set the base URI to {string}")
     public void iSetTheBaseURITo(String baseUri) {

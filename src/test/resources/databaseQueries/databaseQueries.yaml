@@ -1,0 +1,27 @@
+databaseConfig:
+  databaseUrl: "databaseUrl"
+  databaseUsername: "username"
+  databasePassword: "password"
+
+commonQueries:
+  selectAllUsers: "SELECT * FROM users"
+  selectUserById: "SELECT * FROM users WHERE id = :userId"
+  insertUser: "INSERT INTO users (name, email) VALUES (:name, :email)"
+  updateUser: "UPDATE users SET name = :name, email = :email WHERE id = :userId"
+  deleteUser: "DELETE FROM users WHERE id = :userId"
+
+productQueries:
+  selectAllProducts: "SELECT * FROM products"
+  selectProductById: "SELECT * FROM products WHERE id = :productId"
+  insertProduct: "INSERT INTO products (name, price) VALUES (:name, :price)"
+  updateProduct: "UPDATE products SET name = :name, price = :price WHERE id = :productId"
+  deleteProduct: "DELETE FROM products WHERE id = :productId"
+
+authQueries:
+  userLogin: "SELECT * FROM users WHERE username = :username AND password = :password"
+
+batchQueries:
+  updateMultipleUsers:
+    - "UPDATE users SET status = 'active' WHERE last_login > '2023-01-01'"
+    - "UPDATE users SET status = 'inactive' WHERE last_login < '2023-01-01'"
+

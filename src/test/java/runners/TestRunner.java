@@ -14,5 +14,6 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     static {
         // Call method to check uniqueness in the YAML file
         Common.checkYamlFileForUniqueness("apiPaths/apiPaths.yaml");
+        Common.checkYamlFileForUniqueness("databaseQueries/databaseQueries.yaml");
     }
 }
